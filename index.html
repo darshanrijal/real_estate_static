@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Luxuria Estates is your trusted platform for buying, selling, and renting properties. Discover homes, apartments, and land with ease, powered by smart tools and expert guidance."
+    />
+    <title>Luxuria Estates Nepal | Premium Nepalese Real Estate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-building"></i>
+          Luxuria Estates
+        </div>
+
+        <div class="nav-links">
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+          <a href="#"><i class="fas fa-search"></i> Properties</a>
+          <a href="#"><i class="fas fa-users"></i> Agents</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="hero">
+        <h1>Discover Your Dream Property</h1>
+        <p>
+          Luxury homes and apartments in the most desirable locations around the
+          world
+        </p>
+
+        <div class="search-bar">
+          <input
+            id="hero-search"
+            type="text"
+            placeholder="Search by location, property type, or features..."
+            onkeyup="debouncedHeroSearch()"
+          />
+          <button onclick="heroSearch()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </section>
+
+      <section class="filters-section">
+        <h2 class="filters-title">
+          <i class="fas fa-filter"></i> Refine Your Search
+        </h2>
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label class="filter-label"
+              ><i class="fas fa-map-marker-alt"></i> Location</label
+            >
+            <select id="location-filter" class="filter-input">
+              <option value="all">All Locations</option>
+              <option value="Kathmandu">Kathmandu</option>
+              <option value="Budhanilkantha">Budhanilkantha</option>
+              <option value="Sukedhara">Sukedhara</option>
+              <option value="Samakhusi">Samakhusi</option>
+              <option value="Baneshwor">Baneshwor</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label"
+              ><i class="fas fa-bed"></i> Bedrooms</label
+            >
+            <select id="bedrooms-filter" class="filter-input">
+              <option value="all">Any</option>
+              <option value="1">1+ Bedroom</option>
+              <option value="2">2+ Bedrooms</option>
+              <option value="3">3+ Bedrooms</option>
+              <option value="4">4+ Bedrooms</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label"
+              ><i class="fa-solid fa-rupee-sign"></i> Max Price</label
+            >
+            <select id="price-filter" class="filter-input">
+              <option value="all">No Max</option>
+              <option value="5000000">NPR 50,00,000</option>
+              <option value="8000000">NPR 80,00,000</option>
+              <option value="12000000">NPR 1.2 Cr</option>
+              <option value="20000000">NPR 2.0 Cr</option>
+              <option value="35000000">NPR 3.5 Cr</option>
+              <option value="60000000">NPR 6.0 Cr</option>
+              <option value="100000000">NPR 10.0 Cr</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label"
+              ><i class="fas fa-home"></i> Property Type</label
+            >
+            <select id="type-filter" class="filter-input">
+              <option value="all">All Types</option>
+              <option value="House">House</option>
+              <option value="Apartment">Apartment</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="properties-section">
+        <h2 class="section-title">Featured Properties</h2>
+        <div class="properties-grid" id="properties-container">
+          <!-- js here -->
+        </div>
+      </section>
+
+      <section class="agents-section">
+        <h2 class="section-title">Our Top Agents</h2>
+        <div class="agents-grid">
+          <div class="agent-card">
+            <div class="agent-header">
+              <div class="agent-avatar-large">
+                <img
+                  src="https://h4423vghxx.ufs.sh/f/nFcrd5oqAIFms0aEE2Fv7JEb54uLe6BOTqHcf0mU2xyWM3Zh"
+                  alt="Agent Durga Parsai"
+                />
+              </div>
+            </div>
+            <div class="agent-body">
+              <h3 class="agent-name-large">Durga Parsai</h3>
+              <p class="agent-title">Senior Real Estate Agent</p>
+              <div class="agent-stats">
+                <div class="stat">
+                  <span class="stat-value">12</span>
+                  <span class="stat-label">Years</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">245</span>
+                  <span class="stat-label">Sales</span>
+                </div>
+              </div>
+              <button class="agent-contact-btn">Contact Agent</button>
+            </div>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-header">
+              <div class="agent-avatar-large">
+                <img
+                  src="https://h4423vghxx.ufs.sh/f/nFcrd5oqAIFmdAVF7JRoNoOuAlw6XQx05MnV41ymc8zHq3kh"
+                  alt="Agent Anil Shrestha"
+                />
+              </div>
+            </div>
+            <div class="agent-body">
+              <h3 class="agent-name-large">Anil Shrestha</h3>
+              <p class="agent-title">Luxury Property Specialist</p>
+              <div class="agent-stats">
+                <div class="stat">
+                  <span class="stat-value">8</span>
+                  <span class="stat-label">Years</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">187</span>
+                  <span class="stat-label">Sales</span>
+                </div>
+              </div>
+              <button class="agent-contact-btn">Contact Agent</button>
+            </div>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-header">
+              <div class="agent-avatar-large">
+                <img
+                  src="https://h4423vghxx.ufs.sh/f/nFcrd5oqAIFmKjmJJRN5l9nrQESGJZ8daq2HATvwIbo3Ccmk"
+                  alt="Agent Sabita Gurung"
+                />
+              </div>
+            </div>
+            <div class="agent-body">
+              <h3 class="agent-name-large">Sabita Gurung</h3>
+              <p class="agent-title">Commercial Real Estate</p>
+              <div class="agent-stats">
+                <div class="stat">
+                  <span class="stat-value">15</span>
+                  <span class="stat-label">Years</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">312</span>
+                  <span class="stat-label">Sales</span>
+                </div>
+              </div>
+              <button class="agent-contact-btn">Contact Agent</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Luxuria Estates Nepal</h3>
+          <p>Premium real estate services in Kathmandu Valley.</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Lazimpat, Kathmandu, Nepal
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Properties</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Agents</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Services</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#"><i class="fas fa-phone"></i> +977-98510-12345</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-envelope"></i> info@luxurianepal.com</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-clock"></i> Mon-Fri: 10AM-6PM</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-calendar"></i> Sat-Sun: 11AM-3PM</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        &copy; 2025 Luxuria Estates Nepal. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
