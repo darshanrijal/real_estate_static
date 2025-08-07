@@ -186,7 +186,11 @@ const agents = [
   },
 ];
 
-// Format price as currency
+/**
+ *
+ * @param {number} price
+ * @returns Formatted price in NPR
+ */
 function formatPrice(price) {
   return new Intl.NumberFormat("en-NP", {
     style: "currency",
@@ -195,16 +199,16 @@ function formatPrice(price) {
   }).format(price);
 }
 
-// Generate property card HTML
+/**
+ *
+ * @param {typeof properties[number]} property
+ * @returns Generated property card HTML
+ */
 function createPropertyCard(property) {
   const agent = agents.find((a) => a.id === property.agentId);
 
   return `
-                <div class="property-card" data-id="${
-                  property.id
-                }" data-price="${property.price}" data-location="${
-    property.location
-  }" data-bedrooms="${property.bedrooms}" data-type="${property.type}">
+                <div class="property-card">
                     ${
                       property.featured
                         ? '<div class="property-badge">Featured</div>'
@@ -280,7 +284,6 @@ function filterProperties() {
   const typeFilter = document.getElementById("type-filter").value;
 
   const filteredProperties = properties.filter((property) => {
-    // Location filter
     if (
       locationFilter !== "all" &&
       !property.location.includes(locationFilter)
@@ -288,7 +291,6 @@ function filterProperties() {
       return false;
     }
 
-    // Bedrooms filter
     if (
       bedroomsFilter !== "all" &&
       property.bedrooms < Number(bedroomsFilter)
@@ -296,12 +298,10 @@ function filterProperties() {
       return false;
     }
 
-    // Price filter
     if (priceFilter !== "all" && property.price > parseInt(priceFilter)) {
       return false;
     }
 
-    // Type filter
     if (typeFilter !== "all" && property.type !== typeFilter) {
       return false;
     }
@@ -312,7 +312,6 @@ function filterProperties() {
   displayProperties(filteredProperties);
 }
 
-// Display properties in the container
 function displayProperties(propertiesToDisplay) {
   const container = document.getElementById("properties-container");
 
@@ -330,7 +329,6 @@ function displayProperties(propertiesToDisplay) {
   container.innerHTML = propertiesToDisplay.map(createPropertyCard).join("");
 }
 
-// ---------- debounce helper ----------
 function debounce(fn, delay = 300) {
   let timer;
   return (...args) => {
@@ -339,7 +337,6 @@ function debounce(fn, delay = 300) {
   };
 }
 
-// Hero search logic
 function heroSearch() {
   const query = document
     .getElementById("hero-search")
@@ -350,21 +347,18 @@ function heroSearch() {
     (p) =>
       p.location.toLowerCase().includes(query) ||
       p.type.toLowerCase().includes(query) ||
-      p.description.toLowerCase().includes(query)
+      p.description.toLowerCase().includes(query) ||
+      p.title.toLowerCase().includes(query)
   );
 
   displayProperties(filtered);
 }
 
-// Debounce filter
 const debouncedHeroSearch = debounce(heroSearch);
 
-// Initialize the page
 function init() {
-  // Display all properties initially
   displayProperties(properties);
 
-  // Add event listeners to filters
   document
     .getElementById("location-filter")
     .addEventListener("change", filterProperties);
@@ -379,5 +373,4 @@ function init() {
     .addEventListener("change", filterProperties);
 }
 
-// Initialize when the page loads
 window.addEventListener("DOMContentLoaded", init);
