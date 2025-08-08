@@ -3,7 +3,7 @@ const properties = [
   {
     id: 1,
     title: "Budhanilkantha Dream Villa",
-    price: 7_500_0000,
+    price: 75000000,
     location: "Budhanilkantha, Kathmandu",
     bedrooms: 1,
     bathrooms: 5,
@@ -19,7 +19,7 @@ const properties = [
   {
     id: 2,
     title: "Mahankal Modern Bungalow",
-    price: 2_900_0000,
+    price: 29000000,
     location: "Mahankal, Kathmandu",
     bedrooms: 3,
     bathrooms: 3,
@@ -35,7 +35,7 @@ const properties = [
   {
     id: 3,
     title: "Pasikot Residence",
-    price: 6_500_0000,
+    price: 65000000,
     location: "Pasikot, Kathmandu",
     bedrooms: 5,
     bathrooms: 5,
@@ -51,7 +51,7 @@ const properties = [
   {
     id: 4,
     title: "Sitapaila Bungalow",
-    price: 6_000_0000,
+    price: 60000000,
     location: "Sitapaila, Kathmandu",
     bedrooms: 4,
     bathrooms: 5,
@@ -67,7 +67,7 @@ const properties = [
   {
     id: 5,
     title: "Baneshwor Family House",
-    price: 5_600_0000,
+    price: 56000000,
     location: "Baneshwor, Kathmandu",
     bedrooms: 4,
     bathrooms: 4,
@@ -83,7 +83,7 @@ const properties = [
   {
     id: 6,
     title: "Bhangal Green Villa",
-    price: 4_600_0000,
+    price: 46000000,
     location: "Bhangal, Kathmandu",
     bedrooms: 4,
     bathrooms: 5,
@@ -98,7 +98,7 @@ const properties = [
   {
     id: 7,
     title: "Chandragiri Garden Villa",
-    price: 9_000_0000,
+    price: 90000000,
     location: "Chandragiri, Kathmandu",
     bedrooms: 2,
     bathrooms: 4,
@@ -113,7 +113,7 @@ const properties = [
   {
     id: 8,
     title: "Tokha Hillside House",
-    price: 3_850_0000,
+    price: 38500000,
     location: "Tokha, Kathmandu",
     bedrooms: 3,
     bathrooms: 3,
@@ -128,7 +128,7 @@ const properties = [
   {
     id: 9,
     title: "Gokarneshwor Family Home",
-    price: 3_300_0000,
+    price: 33000000,
     location: "Gokarneshwor, Kathmandu",
     bedrooms: 2,
     bathrooms: 3,
@@ -144,7 +144,7 @@ const properties = [
   {
     id: 10,
     title: "Nagarjun Hill Villa",
-    price: 3_500_0000,
+    price: 35000000,
     location: "Nagarjun, Kathmandu",
     bedrooms: 3,
     bathrooms: 3,
