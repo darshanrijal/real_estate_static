@@ -186,11 +186,6 @@ const agents = [
   },
 ];
 
-/**
- *
- * @param {number} price
- * @returns Formatted price in NPR
- */
 function formatPrice(price) {
   return new Intl.NumberFormat("en-NP", {
     style: "currency",
@@ -199,11 +194,6 @@ function formatPrice(price) {
   }).format(price);
 }
 
-/**
- *
- * @param {typeof properties[number]} property
- * @returns Generated property card HTML
- */
 function createPropertyCard(property) {
   const agent = agents.find((a) => a.id === property.agentId);
 
@@ -276,7 +266,6 @@ function createPropertyCard(property) {
             `;
 }
 
-// Filter properties based on criteria
 function filterProperties() {
   const locationFilter = document.getElementById("location-filter").value;
   const bedroomsFilter = document.getElementById("bedrooms-filter").value;
